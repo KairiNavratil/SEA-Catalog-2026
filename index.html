@@ -1,33 +1,129 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <title>LA TV Shows | Home</title>
-  <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
-  <link rel="stylesheet" href="style.css" />
-  <script type="text/javascript" src="scripts.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitch Streamer Catalog</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Modern clean typography: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clean minimalist Icons: Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
+  <!-- Sticky Header -->
   <header class="main-header">
-    <h1 class="title">Pokemon</h1>
-  </header>
-  <div id="card-container"></div>
-  <div class="card" style="display: none">
-    <div class="card-content">
-      <h2>TV Show Title</h2>
-      <img src="" alt="TV Show Poster" />
-      <ul>
-        <li>Bullet Point 1</li>
-        <li>Bullet Point 2</li>
-        <li>Bullet Point 3</li>
-      </ul>
+    <div class="header-container">
+      <div class="logo">
+        <i data-lucide="twitch"></i>
+        <span>Streamer Catalog</span>
+      </div>
+      <div class="search-filters">
+        <div class="search-bar">
+          <i data-lucide="search"></i>
+          <input type="text" id="searchInput" placeholder="Search streamers..." autocomplete="off">
+        </div>
+        <button class="filter-btn">
+          <i data-lucide="sliders-horizontal"></i>
+          Filters
+        </button>
+      </div>
     </div>
-  </div>
-  <div class="footer">
-    <button onclick="quoteAlert()">Get A Quote!</button>
-    <button onclick="removeLastCard()">Remove A Card!</button>
-  </div>
+  </header>
+
+  <!-- Main Stage for Twitchdle -->
+  <section class="stage">
+    <div class="twitchdle-container">
+      <h2>Twitchdle</h2>
+      <p class="subtitle">Guess the mystery Twitch streamer based on their stats</p>
+
+      <div class="guess-input-container">
+        <input type="text" id="twitchdleInput" placeholder="Enter streamer name..." autocomplete="off">
+        <button class="guess-btn">Guess</button>
+      </div>
+
+      <!-- Guess History (Populated by JS) -->
+      <div class="guess-history" id="guessHistory">
+        <!-- Template for how a populated row should structure -->
+        <div class="guess-row template" style="display: none;">
+          <div class="guess-cell streamer-info">
+            <img src="https://unavatar.io/twitch/example" alt="Avatar" class="avatar">
+            <span class="name">Streamer</span>
+          </div>
+          <div class="guess-cell stat match">Partnered <i data-lucide="check-circle"></i></div>
+          <div class="guess-cell stat higher">Viewers <i data-lucide="arrow-up"></i></div>
+          <div class="guess-cell stat no-match">Language <i data-lucide="x-circle"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid for the Catalog -->
+  <main class="catalog-main">
+    <div class="catalog-header">
+      <h2>All Streamers</h2>
+      <div class="view-options">
+        <label for="pageSize">Per page:</label>
+        <select id="pageSize">
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="250">250</option>
+          <option value="500">500</option>
+          <option value="1000">1000</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- The Grid Container -->
+    <div class="grid-container" id="gridContainer">
+      <!-- Example Card structure for reference when building DOM elements -->
+      <div class="streamer-card template" style="display: none;">
+        <div class="card-banner"></div>
+        <img src="https://unavatar.io/twitch/example" alt="Avatar" class="card-avatar">
+        <div class="card-content">
+          <h3 class="streamer-name">
+            StreamerName
+            <i data-lucide="check-circle-2" class="partner-icon"></i>
+          </h3>
+          <p class="streamer-category">Just Chatting</p>
+          <div class="streamer-stats">
+            <div class="stat-item">
+              <i data-lucide="users"></i>
+              <span>15.2K</span>
+            </div>
+            <div class="stat-item">
+              <i data-lucide="message-square"></i>
+              <span>EN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pagination Navigation Bar at bottom -->
+  <nav class="pagination-nav">
+    <button class="page-btn" id="prevPage" disabled><i data-lucide="chevron-left"></i> Prev</button>
+    <div class="page-info">
+      Page <span id="currentPageDisplay">1</span> of <span id="totalPagesDisplay">40</span>
+    </div>
+    <button class="page-btn" id="nextPage">Next <i data-lucide="chevron-right"></i></button>
+  </nav>
+
+  <!-- Initialize Lucide icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- Application Logic -->
+  <script src="scripts.js"></script>
 </body>
 
 </html>
