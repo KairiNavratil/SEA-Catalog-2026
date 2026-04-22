@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitchdle Game</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Modern clean typography: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clean minimalist Icons: Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <!-- Sticky Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <i data-lucide="twitch"></i>
+        <span>Streamer Catalog</span>
+      </div>
+      <nav class="header-nav" style="display: flex; gap: 2rem; font-weight: 500;">
+        <a href="index.html" style="color: var(--text-muted); text-decoration: none;">Catalog</a>
+        <a href="twitchdle.html" class="active" style="color: var(--text-primary); text-decoration: none;">Twitchdle</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Stage for Twitchdle -->
+  <section class="stage">
+    <div class="twitchdle-container">
+      <h2>Twitchdle</h2>
+      <p class="subtitle">Guess the mystery Twitch streamer based on their stats</p>
+
+      <div class="guess-input-container">
+        <input type="text" id="twitchdleInput" placeholder="Enter streamer name..." autocomplete="off">
+        <button class="guess-btn">Guess</button>
+      </div>
+
+      <!-- Guess History (Populated by JS) -->
+      <div class="guess-history" id="guessHistory">
+        <!-- Template for how a populated row should structure -->
+        <div class="guess-row template" style="display: none;">
+          <div class="guess-cell streamer-info">
+            <img src="https://unavatar.io/twitch/example" alt="Avatar" class="avatar">
+            <span class="name">Streamer</span>
+          </div>
+          <div class="guess-cell stat match">Partnered <i data-lucide="check-circle"></i></div>
+          <div class="guess-cell stat higher">Viewers <i data-lucide="arrow-up"></i></div>
+          <div class="guess-cell stat no-match">Language <i data-lucide="x-circle"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Initialize Lucide icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

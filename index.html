@@ -22,52 +22,34 @@
     <div class="header-container">
       <div class="logo">
         <i data-lucide="twitch"></i>
-        <span>Streamer Catalog</span>
+        <span>Twitch Catalog</span>
+      </div>
+      <nav class="header-nav" style="display: flex; gap: 2rem; font-weight: 500;">
+        <a href="index.html" class="active" style="color: var(--text-primary); text-decoration: none;">Catalog</a>
+        <a href="twitchdle.html" style="color: var(--text-muted); text-decoration: none;">Twitchdle</a>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <!-- Grid for the Catalog -->
+  <main class="catalog-main">
+    <div class="catalog-header">
+      <div class="catalog-title-group">
+        <h2>Top Streamers</h2>
+        <p class="catalog-subtitle" style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">Showing 25 of 1000 channels</p>
       </div>
       <div class="search-filters">
         <div class="search-bar">
           <i data-lucide="search"></i>
-          <input type="text" id="searchInput" placeholder="Search streamers..." autocomplete="off">
+          <input type="text" id="searchInput" placeholder="Find your streamer (ex. Ludwig)" autocomplete="off">
         </div>
         <button class="filter-btn">
           <i data-lucide="sliders-horizontal"></i>
           Filters
         </button>
       </div>
-    </div>
-  </header>
-
-  <!-- Main Stage for Twitchdle -->
-  <section class="stage">
-    <div class="twitchdle-container">
-      <h2>Twitchdle</h2>
-      <p class="subtitle">Guess the mystery Twitch streamer based on their stats</p>
-
-      <div class="guess-input-container">
-        <input type="text" id="twitchdleInput" placeholder="Enter streamer name..." autocomplete="off">
-        <button class="guess-btn">Guess</button>
-      </div>
-
-      <!-- Guess History (Populated by JS) -->
-      <div class="guess-history" id="guessHistory">
-        <!-- Template for how a populated row should structure -->
-        <div class="guess-row template" style="display: none;">
-          <div class="guess-cell streamer-info">
-            <img src="https://unavatar.io/twitch/example" alt="Avatar" class="avatar">
-            <span class="name">Streamer</span>
-          </div>
-          <div class="guess-cell stat match">Partnered <i data-lucide="check-circle"></i></div>
-          <div class="guess-cell stat higher">Viewers <i data-lucide="arrow-up"></i></div>
-          <div class="guess-cell stat no-match">Language <i data-lucide="x-circle"></i></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Grid for the Catalog -->
-  <main class="catalog-main">
-    <div class="catalog-header">
-      <h2>All Streamers</h2>
       <div class="view-options">
         <label for="pageSize">Per page:</label>
         <select id="pageSize">
@@ -81,30 +63,34 @@
       </div>
     </div>
 
-    <!-- The Grid Container -->
-    <div class="grid-container" id="gridContainer">
-      <!-- Example Card structure for reference when building DOM elements -->
-      <div class="streamer-card template" style="display: none;">
-        <div class="card-banner"></div>
-        <img src="https://unavatar.io/twitch/example" alt="Avatar" class="card-avatar">
-        <div class="card-content">
-          <h3 class="streamer-name">
-            StreamerName
-            <i data-lucide="check-circle-2" class="partner-icon"></i>
-          </h3>
-          <p class="streamer-category">Just Chatting</p>
-          <div class="streamer-stats">
-            <div class="stat-item">
-              <i data-lucide="users"></i>
-              <span>15.2K</span>
-            </div>
-            <div class="stat-item">
-              <i data-lucide="message-square"></i>
-              <span>EN</span>
-            </div>
+    <!-- Template Card (Hidden and outside the container so it doesn't get wiped by innerHTML = "") -->
+    <div class="streamer-card card template" style="display: none;">
+      <div class="card-banner"></div>
+      <img src="https://unavatar.io/twitch/example" alt="Avatar" class="card-avatar">
+      <div class="card-content">
+        <h2 class="streamer-name">
+          StreamerName
+          <i data-lucide="check-circle-2" class="partner-icon"></i>
+        </h2>
+        <div class="streamer-stats">
+          <div class="stat-item" title="Category / Game">
+            <i data-lucide="gamepad-2"></i>
+            <span>Gaming</span>
+          </div>
+          <div class="stat-item" title="Reach / Followers">
+            <i data-lucide="users"></i>
+            <span>15.2K</span>
+          </div>
+          <div class="stat-item" title="Growth">
+            <i data-lucide="trending-up"></i>
+            <span>+2.4%</span>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- The Grid Container -->
+    <div class="grid-container" id="card-container">
     </div>
   </main>
 
@@ -125,7 +111,7 @@
   <!-- Data -->
   <script src="twitchData.js"></script>
   <!-- Application Logic -->
-  <script src="scripts.js"></script>
+  <script src="testing.js"></script>
 </body>
 
 </html>
