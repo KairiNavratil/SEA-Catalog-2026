@@ -7,16 +7,16 @@
   <title>Twitch Streamer Catalog</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- Modern clean typography: Inter -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Core Icons loaded efficiently via Native SVG Elements -->
+  
 </head>
 
 <body>
-  <!-- Sticky Header -->
+  
   <header class="main-header">
     <div class="header-container">
       <div class="logo">
@@ -73,14 +73,13 @@
       </div>
       <nav class="header-nav" style="display: flex; gap: 2rem; font-weight: 500;">
         <a href="index.html" class="active" style="color: var(--text-primary); text-decoration: none;">Catalog</a>
-        <a href="twitchdle.html" style="color: var(--text-muted); text-decoration: none;">Twitchdle</a>
       </nav>
     </div>
   </header>
 
 
 
-  <!-- Grid for the Catalog -->
+  
   <main class="catalog-main">
     <div class="catalog-header">
       <div class="catalog-title-group">
@@ -129,7 +128,7 @@
       </div>
     </div>
 
-    <!-- Template Card (Hidden and outside the container so it doesn't get wiped by innerHTML = "") -->
+    
     <div class="streamer-card card template" style="display: none;">
       <div class="avatar-container" style="display: flex; justify-content: center; padding: 20px 0 10px;">
         <div style="position: relative; width: 150px; height: 150px;">
@@ -150,7 +149,7 @@
         <h2 class="streamer-name"
           style="font-size: 14px; font-weight: bold; color: #ffffff; margin: 0 0 4px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
           StreamerName</h2>
-        <!-- No Game Data Required -->
+        
         <div class="streamer-meta" style="display: flex; justify-content: space-between; align-items: center;">
           <div class="viewer-count"
             style="color: #adadb8; font-size: 12px; font-weight: 400; display: flex; align-items: center; gap: 4px;">
@@ -162,12 +161,12 @@
       </div>
     </div>
 
-    <!-- The Grid Container -->
+    
     <div class="grid-container" id="card-container">
     </div>
   </main>
 
-  <!-- Pagination Navigation Bar at bottom -->
+  
   <nav class="pagination-nav">
     <button class="page-btn" id="prevPage" disabled>
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -187,7 +186,7 @@
   </nav>
 
   <script src="twitchData.js"></script>
-  <!-- Application Logic -->
+  
   <script src="script.js"></script>
 </body>
 

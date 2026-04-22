@@ -1,4 +1,4 @@
-/* Global Settings & Twitch Dark Mode Palette */
+
 :root {
   --bg-color: #0e0e10;
   --card-bg: #18181b;
@@ -9,13 +9,13 @@
   --accent-hover: #a970ff;
   --border-color: #303032;
 
-  /* Feedback Colors for Twitchdle */
+  
   --success-color: #00f593;
   --error-color: #eb0400;
   --warning-color: #f5a623;
 
-  --font-family: 'Inter', sans-serif;
-  --font-display: 'Roobert', 'Inter', sans-serif;
+  --font-family: 'Roobert', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: 'Roobert', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -41,7 +41,7 @@ h4 {
   font-weight: 600;
 }
 
-/* 1. Sticky Header */
+
 .main-header {
   position: sticky;
   top: 0;
@@ -77,7 +77,7 @@ h4 {
   align-items: center;
 }
 
-/* Dense, functional search bar */
+
 .search-bar {
   display: flex;
   align-items: stretch;
@@ -141,7 +141,7 @@ h4 {
   background-color: #35353b;
 }
 
-/* 2. Main Stage (Twitchdle) */
+
 .stage {
   max-width: 900px;
   margin: 40px auto;
@@ -155,7 +155,7 @@ h4 {
   border-radius: 12px;
   padding: 32px;
   text-align: center;
-  /* Deep blocky shadow instead of neon glow */
+  
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
 }
 
@@ -213,7 +213,7 @@ h4 {
   background-color: var(--accent-hover);
 }
 
-/* Game Results History */
+
 .guess-history {
   display: flex;
   flex-direction: column;
@@ -251,7 +251,7 @@ h4 {
   background-color: var(--bg-color);
 }
 
-/* Twitchdle Status Styling (Aesthetic non-glow semantic colors) */
+
 .guess-cell.match {
   background-color: rgba(46, 176, 134, 0.1);
   border-color: rgba(46, 176, 134, 0.4);
@@ -271,7 +271,7 @@ h4 {
   color: var(--error-color);
 }
 
-/* 3. Catalog Grid Configuration */
+
 .catalog-main {
   max-width: 1512px;
   margin: 0 auto;
@@ -315,7 +315,7 @@ h4 {
   border-color: var(--accent-color);
 }
 
-/* Blocky, robust information grid */
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -323,7 +323,7 @@ h4 {
   margin-bottom: 40px;
 }
 
-/* Card Styling - Active Pop Effect & Avatar Focus */
+
 .streamer-card {
   background-color: var(--card-bg);
   border-radius: 4px;
@@ -381,7 +381,7 @@ h4 {
   flex-direction: column;
 }
 
-/* 4. Bottom Pagination Navigation */
+
 .pagination-nav {
   position: sticky;
   bottom: 0;
