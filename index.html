@@ -12,8 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Clean minimalist Icons: Lucide -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Core Icons loaded efficiently via Native SVG Elements -->
 </head>
 
 <body>
@@ -21,7 +20,55 @@
   <header class="main-header">
     <div class="header-container">
       <div class="logo">
-        <i data-lucide="twitch"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 40 40"
+          style="color: var(--accent-color);">
+          <polygon points="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8" fill="currentColor">
+            <animate dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1"
+              keySplines="0.25 0.1 0.25 1" attributeName="points"
+              from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"
+              to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate>
+            <animate dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1"
+              keySplines="0.25 0.1 0.25 1" attributeName="points"
+              from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"
+              to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate>
+            <animate dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1"
+              keySplines="0.25 0.1 0.25 1" attributeName="points" to="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"
+              from="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"></animate>
+            <animate dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1"
+              keySplines="0.25 0.1 0.25 1" attributeName="points" to="16 5 8 13 8 31 14 31 14 36 19 31 23 31 35 19 35 5"
+              from="13 8 8 13 8 31 14 31 14 36 19 31 23 31 32 22 32 8"></animate>
+          </polygon>
+          <polygon points="26 25 30 21 30 10 14 10 14 25 18 25 18 29 22 25" fill="#fff">
+            <animateTransform dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1"
+              keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3">
+            </animateTransform>
+            <animateTransform dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1"
+              keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0">
+            </animateTransform>
+            <animateTransform dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1"
+              keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0">
+            </animateTransform>
+            <animateTransform dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1"
+              keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3">
+            </animateTransform>
+          </polygon>
+          <g>
+            <path d="M20,14 L22,14 L22,20 L20,20 L20,14 Z M27,14 L27,20 L25,20 L25,14 L27,14 Z" fill="currentColor">
+              <animateTransform dur="150ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1"
+                keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3">
+              </animateTransform>
+              <animateTransform dur="250ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1"
+                keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0">
+              </animateTransform>
+              <animateTransform dur="50ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1"
+                keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="3 -3" to="0 0">
+              </animateTransform>
+              <animateTransform dur="75ms" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0; 1"
+                keySplines="0.25 0.1 0.25 1" attributeName="transform" type="translate" from="0 0" to="3 -3">
+              </animateTransform>
+            </path>
+          </g>
+        </svg>
         <span>Twitch Catalog</span>
       </div>
       <nav class="header-nav" style="display: flex; gap: 2rem; font-weight: 500;">
@@ -38,15 +85,34 @@
     <div class="catalog-header">
       <div class="catalog-title-group">
         <h2>Top Streamers</h2>
-        <p class="catalog-subtitle" style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">Showing 25 of 1000 channels</p>
+        <p class="catalog-subtitle" style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">Showing 25
+          of 1000 channels</p>
       </div>
       <div class="search-filters">
         <div class="search-bar">
-          <i data-lucide="search"></i>
           <input type="text" id="searchInput" placeholder="Find your streamer (ex. Ludwig)" autocomplete="off">
+          <button class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              style="color: var(--text-primary);">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
         </div>
         <button class="filter-btn">
-          <i data-lucide="sliders-horizontal"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="21" x2="14" y1="4" y2="4" />
+            <line x1="10" x2="3" y1="4" y2="4" />
+            <line x1="21" x2="12" y1="12" y2="12" />
+            <line x1="8" x2="3" y1="12" y2="12" />
+            <line x1="21" x2="16" y1="20" y2="20" />
+            <line x1="12" x2="3" y1="20" y2="20" />
+            <line x1="14" x2="14" y1="2" y2="6" />
+            <line x1="8" x2="8" y1="10" y2="14" />
+            <line x1="16" x2="16" y1="18" y2="22" />
+          </svg>
           Filters
         </button>
       </div>
@@ -65,26 +131,33 @@
 
     <!-- Template Card (Hidden and outside the container so it doesn't get wiped by innerHTML = "") -->
     <div class="streamer-card card template" style="display: none;">
-      <div class="card-banner"></div>
-      <img src="https://unavatar.io/twitch/example" alt="Avatar" class="card-avatar">
-      <div class="card-content">
-        <h2 class="streamer-name">
-          StreamerName
-          <i data-lucide="check-circle-2" class="partner-icon"></i>
-        </h2>
-        <div class="streamer-stats">
-          <div class="stat-item" title="Category / Game">
-            <i data-lucide="gamepad-2"></i>
-            <span>Gaming</span>
+      <div class="avatar-container" style="display: flex; justify-content: center; padding: 20px 0 10px;">
+        <div style="position: relative; width: 150px; height: 150px;">
+          <img src="https://unavatar.io/twitch/example" alt="Avatar" class="card-avatar"
+            style="width: 100%; height: 100%; border-radius: 50%; border: 2px solid transparent; object-fit: cover;">
+          <div class="partner-badge"
+            style="position: absolute; bottom: 4px; right: 8px; background-color: #18181b; border-radius: 50%; padding: 2px; width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+            <svg class="partner-icon" style="width: 16px; height: 16px; color: #fff;" xmlns="http://www.w3.org/2000/svg"
+              width="16" height="16" viewBox="0 0 24 24" fill="#9146FF" stroke="#9146FF" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m9 12 2 2 4-4" stroke="#fff" />
+            </svg>
           </div>
-          <div class="stat-item" title="Reach / Followers">
-            <i data-lucide="users"></i>
-            <span>15.2K</span>
+        </div>
+      </div>
+      <div class="card-content" style="padding: 0 16px 12px; flex: 1; display: flex; flex-direction: column;">
+        <h2 class="streamer-name"
+          style="font-size: 14px; font-weight: bold; color: #ffffff; margin: 0 0 4px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+          StreamerName</h2>
+        <!-- No Game Data Required -->
+        <div class="streamer-meta" style="display: flex; justify-content: space-between; align-items: center;">
+          <div class="viewer-count"
+            style="color: #adadb8; font-size: 12px; font-weight: 400; display: flex; align-items: center; gap: 4px;">
+            <div class="live-dot" style="width: 8px; height: 8px; background-color: #eb0400; border-radius: 50%;"></div>
+            50K
           </div>
-          <div class="stat-item" title="Growth">
-            <i data-lucide="trending-up"></i>
-            <span>+2.4%</span>
-          </div>
+          <span class="language" style="color: #bf94ff; font-size: 12px; font-weight: 400;">English</span>
         </div>
       </div>
     </div>
@@ -96,17 +169,22 @@
 
   <!-- Pagination Navigation Bar at bottom -->
   <nav class="pagination-nav">
-    <button class="page-btn" id="prevPage" disabled><i data-lucide="chevron-left"></i> Prev</button>
+    <button class="page-btn" id="prevPage" disabled>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6" />
+      </svg> Prev
+    </button>
     <div class="page-info">
       Page <span id="currentPageDisplay">1</span> of <span id="totalPagesDisplay">40</span>
     </div>
-    <button class="page-btn" id="nextPage">Next <i data-lucide="chevron-right"></i></button>
+    <button class="page-btn" id="nextPage">
+      Next <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
   </nav>
-
-  <!-- Initialize Lucide icons -->
-  <script>
-    lucide.createIcons();
-  </script>
 
   <!-- Data -->
   <script src="twitchData.js"></script>

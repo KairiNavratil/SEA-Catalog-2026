@@ -10,11 +10,12 @@
   --border-color: #303032;
 
   /* Feedback Colors for Twitchdle */
-  --success-color: #2eb086;
+  --success-color: #00f593;
   --error-color: #eb0400;
   --warning-color: #f5a623;
 
   --font-family: 'Inter', sans-serif;
+  --font-display: 'Roobert', 'Inter', sans-serif;
 }
 
 * {
@@ -47,13 +48,15 @@ h4 {
   z-index: 100;
   background-color: var(--card-bg);
   border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  height: 50px;
 }
 
 .header-container {
-  max-width: 1400px;
+  max-width: 1512px;
   margin: 0 auto;
-  padding: 12px 24px;
+  padding: 0 30px;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,12 +80,12 @@ h4 {
 /* Dense, functional search bar */
 .search-bar {
   display: flex;
-  align-items: center;
-  background-color: var(--bg-color);
+  align-items: stretch;
+  background-color: transparent;
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  padding: 8px 12px;
-  gap: 8px;
+  height: 36px;
+  overflow: hidden;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -91,20 +94,31 @@ h4 {
   box-shadow: 0 0 0 2px rgba(145, 70, 255, 0.2);
 }
 
-.search-bar i {
-  color: var(--text-secondary);
-  width: 18px;
-  height: 18px;
-}
-
 .search-bar input {
   background: transparent;
   border: none;
   color: var(--text-primary);
   font-family: var(--font-family);
   font-size: 0.9rem;
-  width: 250px;
+  width: 300px;
+  padding: 8px 12px;
   outline: none;
+}
+
+.search-btn {
+  background-color: #303032;
+  color: var(--text-primary);
+  border: none;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.search-btn:hover {
+  background-color: #3a3a3d;
 }
 
 .filter-btn {
@@ -165,15 +179,16 @@ h4 {
 }
 
 .guess-input-container input {
-  padding: 12px 16px;
+  height: 36px;
   border-radius: 6px;
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-color);
+  border: 1px solid #35353b;
+  background-color: #18181b;
   color: var(--text-primary);
   font-family: var(--font-family);
   font-size: 1rem;
   width: 100%;
   max-width: 320px;
+  padding: 0 12px;
   outline: none;
   transition: border-color 0.15s ease;
 }
@@ -258,9 +273,9 @@ h4 {
 
 /* 3. Catalog Grid Configuration */
 .catalog-main {
-  max-width: 1400px;
+  max-width: 1512px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 24px 30px;
   width: 100%;
   flex: 1;
 }
@@ -303,90 +318,67 @@ h4 {
 /* Blocky, robust information grid */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
   margin-bottom: 40px;
 }
 
-/* Card Styling - High Info Density & No Gradients */
+/* Card Styling - Active Pop Effect & Avatar Focus */
 .streamer-card {
   background-color: var(--card-bg);
-  border-radius: 8px;
-  overflow: hidden;
+  border-radius: 4px;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   position: relative;
   text-decoration: none;
   color: inherit;
-  border: 1px solid var(--border-color);
-  transition: transform 0.15s ease, background-color 0.15s ease;
+  border: 2px solid transparent;
+  padding-bottom: 8px;
+  will-change: transform;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 .streamer-card:hover {
-  transform: translateY(-2px);
-  background-color: var(--card-hover);
+  border-color: #9146FF;
+  transform: translate(4px, -4px);
+  box-shadow: -4px 4px 0px #9146FF;
+  cursor: pointer;
 }
 
-.card-banner {
-  height: 65px;
-  background-color: #26262c;
-  /* Strict flat banner */
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  width: 100%;
 }
 
 .card-avatar {
-  width: 64px;
-  height: 64px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
-  border: 4px solid var(--card-bg);
-  position: absolute;
-  top: 33px;
-  left: 16px;
-  background-color: var(--bg-color);
   object-fit: cover;
 }
 
+.partner-badge {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--card-bg);
+  border-radius: 50%;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-content {
-  padding: 40px 16px 16px;
+  padding: 0 16px 12px;
   flex: 1;
-}
-
-.streamer-name {
   display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 1.1rem;
-  margin-bottom: 4px;
-}
-
-.partner-icon {
-  width: 16px;
-  height: 16px;
-  color: var(--accent-color);
-}
-
-.streamer-category {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  margin-bottom: 16px;
-}
-
-.streamer-stats {
-  display: flex;
-  gap: 16px;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-.stat-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.stat-item i {
-  width: 14px;
-  height: 14px;
+  flex-direction: column;
 }
 
 /* 4. Bottom Pagination Navigation */
